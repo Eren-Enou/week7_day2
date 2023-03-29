@@ -7,8 +7,9 @@ console.log('This is the homework!');
     Ex 3. toCelcius(50) // 10
 */
 
-function toCelcius(number) {
-    
+function toCelcius(fahrenheit) {
+    let celsius = (fahrenheit - 32) * 5 / 9;
+    return celsius;
 }
 
 
@@ -30,7 +31,21 @@ function toCelcius(number) {
 // let user1 = new User('brians', 'abc123');
 // user1.changePassword('abc123', '123abc'); // Sets the user's password to 123abc
 
+class User {
+    constructor(username, password) {
+        this.username = username;
+        this.password = password;
+    }
 
+    changePassword(oldPassword, newPassword){
+        if (this.password === oldPassword) {
+            this.password = newPassword;
+            console.log("Password changed!");
+        } else {
+            console.log("Old password incorrect, password not changed.");
+        }
+    }
+}
 
 
 
@@ -42,3 +57,7 @@ function toCelcius(number) {
     Ex 2. squareNegatives([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) // [25, 16, 9, 4, 1]
     Ex 3. squareNegatives([2, 4, 6, 8, 10]) // []
 */
+
+function squareNegatives(arr) {
+    return arr.filter(num => num < 0).map(num => num * num);
+}
